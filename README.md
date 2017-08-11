@@ -1,2 +1,1 @@
-# julianhasse.github.io
-Julian Hasse - Portfolio
+# Julian Hasse - Portfolio
