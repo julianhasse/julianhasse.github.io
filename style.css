@@ -4,14 +4,14 @@ html {
   position: relative;
 }
 h2 {
-  font-family:'Roboto', Arial, serif;
+  font-family:'Roboto', sans-serif;
   margin-top: -50px;
   font-size: 30px;
   line-height: 1.2;
   font-weight:300;
 }
 h1 {
-  font-family:'Shrikhand', cursive;
+  font-family:'Shrikhand', sans-serif;
   margin-bottom: 45px;
   font-size: 55px;
   line-height: 1.2;
@@ -23,7 +23,7 @@ header {
 }
 body {
   color: #fff;
-  font-family: 'Shrikhand', cursive;
+  font-family: 'Shrikhand', sans-serif;
   font-size: 16px;
   text-align: center;
   background: #262730;
