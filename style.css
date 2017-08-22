@@ -1,119 +1,265 @@
-$transition: all 0.35s cubic-bezier(0.310, -0.105, 0.430, 1.590);
-html {
-  min-height: 100%;
-  position: relative;
-}
-h2 {
-  font-family:'Roboto', sans-serif;
-  margin-top: -50px;
-  font-size: 30px;
-  line-height: 1.2;
-  font-weight:300;
-}
-h1 {
-  font-family:'Roboto', sans-serif;
-  margin-bottom: 45px;
-  font-size: 55px;
-  line-height: 1.2;
+/* ----- Portfolio by Julian Hasse, 2017 ----- */
+* {
+  box-sizing:border-box; 
 }
 
-header {
-  padding: 0px 20px 0px 20px;
-  font-size: 14px;
-}
 body {
-  color: #fff;
-  font-family:'Roboto', sans-serif;
-  font-size: 16px;
+  margin: 0px;
+  background-image: url('images/ep_naturalwhite.png');
+}
+
+/* ----- sticky footer using the calc() function ----- */
+#wrapper {
+  min-height: calc(100vh - 177px);
+  margin: 0 auto; 
+  width:960px;
+}
+/* ----- Header includes -> logo + Nav ----- */
+header {
+  background-color: #FFF;
+  margin-bottom: 30px;
+  color:#888;
+  border-bottom: 2px solid #ccc;
+  height:70px;
+}
+/* ----- Full includes -> Main content + Aside ----- */
+#full {
+  margin-top: 15px;
+  clear: both;
+  width: 90%;
+  padding:0px;
+  min-height: 300px;
+}
+/* ----- Contact links ----- */
+aside {
+	background-color:white;
+  padding: 50px 40px;
+  color:#888;
+  width:250px;
+  border: 1px dotted #ddd;
+  min-height:200px;
+  margin-right: 20px;
   text-align: center;
-  background: #262730;
-  margin-bottom: 5em;
+  float:left;
 }
-#container{
+/* ----- About me ----- */
+article {
+  background-color:white;
+  padding:50px 35px ;
+  color:#888;
+  width:550px;
+  float:left;
+  border: 1px dotted #ddd;
+  min-height:300px;
+  margin-right: 40px;
+}
+/* ----- Portfolio ----- */
+article.portfolio {
+  background-color:white;
+  padding:50px 20px 20px 30px;
+  color:#888;
+  width:550px;
+  float:left;
+  border: 1px dotted #ddd;
+  min-height:300px;
+}
 
+article hr {
+  border-width: 1px;
+  border-color:#ddd;
 }
-.footer {
-  background: #1B1B26;
-  display:block;
-  width:100%;
-  bottom: 0;
-  left: 0;
-  height: 5em;
-  position: absolute;
+
+aside hr {
+  border-width: thin;
+  border-color:#ddd;
 }
-a {
-  color: #4183c4;
+/* ----- Sticky footer ----- */
+footer {
+  background-color: #666;
+  padding:30px;
+  color:#ccc;
+  font-size:12px;
+  border-top: thick solid #4aaaa5;
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  text-align: center;
+	}
+
+#middleSection {
+  padding:40px;
+  color:#888;
+}
+/* ----- Logo (inside header) ----- */
+#logo {
+  font-family: 'Georgia', Times, 'Times New Roman', serif;
+  font-size: 24px;
+  font-weight: bold;
+  float:left;
+  padding: 20px 28px 24px 30px;
+  background-color: #4aaaa5;
+  color:#FFF;
+  margin:0px 425px 0 0;
+}
+/* ----- Nav (inside header) ----- */
+nav {
+  float:left;
+  margin-top: 0px;
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  font-size:15px;
+  padding-top: 26px;
+}
+/* ----- Interactive buttons + links ----- */
+.button:hover {
+  color:#4aaaa5;
+}
+
+a:link {
   text-decoration: none;
+  color:#777;
 }
 
-$colors: (
-	"tumblr": "#36465d",
-	"codepen": "#333",
-  "github":"#000",
-	"twitter": "#3CF",
-	"instagram": "#3f729b"
-);
-.social-buttons {
-	height: auto;
-	margin: auto;
-	padding: 40px;
-	text-align: center;
-}
-.button-main {
-  font-size: 1.8rem;
-  color:#333;
-	display:inline-block;
-	padding:0.5em 1.75em 0.5em 1em;
-	border-radius: 0.25em;
-	background: #F0F0F0;
-	border:1px solid #ccc;
-	position: relative;
-	margin:25px 0 25px 0;
-}
-.social-button,.button-main:hover {
- background-color: #FFF;
-  color: d9eef7;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-.button-main:focus{
-  border-bottom: 1px solid #2A9AF2;
-  box-shadow: 0px 1px 0px 0px #2A9AF2;
-}
-.social-button {
-	display: inline-block;
-	background-color: #fff;
-	width: 90px;
-	height: 90px;
-	margin: 0 10px;
-	text-align: center;
-	overflow: hidden;
-	//overflow bug fix
-	border-radius: 50%;
-
-	.fa {
-		font-size: 40px;
-    padding: 20px;
-		vertical-align: middle;
-		transition: $transition;
-	}
-	@each $class,$color in $colors {
-
-		&.#{$class} {
-			.fa {
-				color: #{$color};
-			}
-		}
-	}
-	&:hover {
-		.fa {
-			transform: scale(1.2);
-		}
-	}
+a:visited {
+  text-decoration: none;
+  color:#777;
 }
 
-// Media Queires
-@media(max-width:400px) {
-    .footer {
-        padding: 10px 0 10px 0px;
-    }
+a:hover {
+  text-decoration: none;
+  color:#777;
 }
+
+a:active {
+  text-decoration: none;
+  color:#777;
+}
+
+#logo:hover {
+  opacity: 0.9;
+}
+/* ----- End Interactive buttons + links ----- */
+
+.headings {
+  color:#4aaaa5;
+  font-family:'Georgia', Times, Times New Roman, serif;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.connect {
+  color:#4aaaa5;
+  font-family:'Georgia', Times, Times New Roman, serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.headshot img {
+   width: 130px; 
+   float:left;
+   margin: 0px 20px 6px 0px;
+}
+
+.mainText {
+   font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+   font-size: 15px;
+   line-height: 25px;
+}
+
+.mainContent {
+  margin-top: 21px;
+}
+/* ----- Contact link icons ----- */
+.iconLeft {
+  float:left;
+  margin-right: 5px;
+  margin-left:5px;
+}
+
+.iconCenter {
+  float:left;
+  margin-right: 5px
+}
+
+.iconRight {
+  float:left;
+}
+
+.icons {
+  margin-top: 18px;
+}
+
+.icons img:hover {
+  opacity:0.7;
+}
+/* ----- End Contact link icons ----- */
+
+/* ----- Contact form ----- */
+form {
+  font-family:  'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 25px;
+  color:#928E8E;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color:#ccc;
+}
+
+input[type=submit] {
+    width: 30%;
+    background-color: #4aaaa5;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #92ccc9;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+/* ----- End Contact form ----- */
+
+/* ----- Portfolio images ----- */
+.img1 {
+  float:left;
+  padding-left: 0px;
+  margin-right: 17px;
+}
+
+.img2 {
+margin-right: 3px;
+}
+
+.mainPortfolio {
+  margin-top: 17px;
+  padding:5px;
+}
+
+.img1:hover {
+  opacity:0.9;
+}
+
+.img2:hover {
+  opacity:0.9;
+}
+
+
+/* ----- End Portfolio images ----- */
